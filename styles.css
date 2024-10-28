@@ -1,3 +1,48 @@
 html {
     font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+    color: white;
+}
+
+#navbar {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: black;
+    overflow: hidden;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+.navelement {
+    padding: 14px;
+    padding-left: 17px;
+    display: block;
+    text-align: center;
+}
+
+.navelement:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.navelement:link {
+    color: white;
+    text-decoration: none;
+}
+
+.navelement:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+#active {
+    background-color: lightblue;
+    color: black;
 }
