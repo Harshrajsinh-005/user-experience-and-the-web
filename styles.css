@@ -4,6 +4,20 @@ html {
     color: white;
 }
 
+#cookies {
+    background-color: antiquewhite;
+    height: 120px;
+    width: 250px;
+    align-self: center;
+    color: lightblue;
+    margin-top: 300px;
+    text-align: center;
+}
+
+.cookiebtn {
+    margin-top: 20px;
+}
+
 #navbar {
     padding: 0;
     margin: 0;
