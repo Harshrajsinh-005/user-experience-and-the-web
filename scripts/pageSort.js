@@ -4,6 +4,8 @@ let sortingArray = books
 let oldestBtn
 let newestBtn
 let genreDropDownItems
+let currentArray
+const bookContainer = document.getElementById("book-display")
 
 function returnGenreBooks(genre) {
     let genreBookArray = []
@@ -35,10 +37,46 @@ const quickSort = (arr) => {
     }
   
     return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
-};
+}
 
-function updateBooks(bookArray) {
-    console.log(bookArray)
+window.displayBooks = function (arrayToUse) {
+    if (!arrayToUse) { arrayToUse = sortingArray }
+    currentArray = arrayToUse
+
+    bookContainer.innerHTML = 
+        `
+        <div class="book-list">
+            ${arrayToUse
+                .map(
+                    (book, index) => `
+                        <div class="book-item" onclick="viewBook(${index})">
+                            <img src="${book.Pictures[0]}" alt="${book.Title}">
+                            <div class="book-title">${book.Title}</div>
+                            <div class="book-genre>${book.Genre}</div>
+                        </div>`
+                ).join("")}
+        </div>
+        `
+}
+
+window.viewBook = function (index) {
+    console.log(index)
+    const arrayToUse = (currentArray) ? currentArray : sortingArray
+    const book = arrayToUse[index]
+
+    bookContainer.innerHTML = 
+    `
+        <div class="book-detail">
+            <h1>${book.Title}</h1>
+            <img src="${book.Pictures[0]}" alt="${book.Title}">
+            <p><strong>Author:</strong> ${book.Author}</p>
+            <p><strong>Genre:</strong> ${book.Genre}</p>
+            <p><strong>Release Date:</strong> ${book.ReleaseDate}</p>
+            <p><strong>Author's City:</strong> ${book.AuthorCity}</p>
+            <p><strong>Summary:</strong> ${book.Summary}</p>
+            <button class="back-button" onclick="displayBooks()">Back to List</button>
+        </div>
+    `
 }
 
 window.onload = () => {
@@ -47,21 +85,23 @@ window.onload = () => {
     genreDropDownItems = document.querySelectorAll(".dropelement")
 
     oldestBtn.addEventListener("click", () => { 
-        let sortedArray = quickSort(sortingArray).reverse()
-        updateBooks(sortedArray)
+        let sortedArray = quickSort(sortingArray)
+        displayBooks(sortedArray)
     })
 
     newestBtn.addEventListener("click", () => { 
-        let sortedArray = quickSort(sortingArray)
-        updateBooks(sortedArray)
+        let sortedArray = quickSort(sortingArray).reverse()
+        displayBooks(sortedArray)
     })
     
     genreDropDownItems.forEach(genre => {
         genre.addEventListener("click", (event) => { 
             event.preventDefault()
 
-            let sortedArray = returnGenreBooks("Adventure")
-            updateBooks(sortedArray)
+            let sortedArray = returnGenreBooks(genre.innerHTML)
+            displayBooks(sortedArray)
         })
     })
+
+    displayBooks(sortingArray)
 }

@@ -106,3 +106,49 @@ li {
 .dropdown:hover .dropcontent {display: block;}
   
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.book-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.book-item img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.book-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.book-genre {
+    font-size: 14px;
+    color: #555;
+}
+
+.book-detail {
+    padding: 20px;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
