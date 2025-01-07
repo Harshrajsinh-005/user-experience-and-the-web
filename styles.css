@@ -1,7 +1,7 @@
 html {
     font-family: 'Times New Roman', Times, serif;
     background-color:rgba(222,221,217,255);
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 #navbar {
@@ -28,12 +28,12 @@ li {
 }
 
 .navelement:visited {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
 .navelement:link {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
