@@ -4,18 +4,52 @@
         <title>Book Club</title>
         <link rel="stylesheet" href="styles.css">
         <script type="module" src="scripts/main.js"></script>
+        <style>
+            #header {
+                font-size: 1.5em; /* Increase header size */
+                background-color: #d5c8aa;
+                text-align: center;
+                padding: 20px 0;
+            }
 
+            #navbar {
+                display: flex;
+                justify-content: center; /* Center buttons */
+                gap: 30px; /* Add spacing between buttons */
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .navelement {
+                color: black; /* Change text color to black */
+                text-decoration: none;
+                padding: 10px 20px;
+                font-weight: bold;
+            }
+
+            .navelement:hover {
+                background-color: lightgray;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
         <div id="header">
             <ul id="navbar">
-                <li style="padding-left: 775px;"><a class="navelement" id="active" href="index.html">Home</a></li>
+                <li><a class="navelement" id="active" href="index.html">Home</a></li>
                 <li><a class="navelement" href="recommender.html">Recommender</a></li>
                 <li><a class="navelement" href="bookmap.html">Book Map</a></li>
                 <li><a class="navelement" href="about.html">About Us</a></li>
             </ul>
         </div>
-    </head>
 
-    <body>
-        
+        <main>
+            <section>
+                <h1>Welcome to the Book Club</h1>
+                <p>Discover, recommend, and enjoy books with our community.</p>
+            </section>
+        </main>
     </body>
 </html>
