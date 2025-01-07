@@ -1,15 +1,23 @@
-import books from "../data/books.js"; // Import the books data
-let sortingArray = books; // Array to hold books for sorting/filtering
-let oldestBtn, newestBtn, genreDropDownItems, currentArray;
+import books from "./books.js";
 
-const bookContainer = document.getElementById("book-display"); // Book container element
+let sortingArray = books;
 
-// Function to filter books by genre
+let oldestBtn;
+let newestBtn;
+let genreDropDownItems;
+let currentArray;
+const bookContainer = document.getElementById("book-display");
+
 function returnGenreBooks(genre) {
-    return sortingArray.filter(book => book.Genre === genre);
+    let genreBookArray = [];
+    sortingArray.forEach(book => {
+        if (book.Genre === genre) {
+            genreBookArray.push(book);
+        }
+    });
+    return genreBookArray;
 }
 
-// QuickSort function for sorting by release date
 const quickSort = (arr) => {
     if (arr.length <= 1) {
         return arr;
@@ -30,11 +38,8 @@ const quickSort = (arr) => {
     return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
 };
 
-// Function to display the list of books
 window.displayBooks = function (arrayToUse) {
-    if (!arrayToUse) {
-        arrayToUse = sortingArray;
-    }
+    if (!arrayToUse) arrayToUse = sortingArray;
     currentArray = arrayToUse;
 
     bookContainer.innerHTML = `
@@ -46,15 +51,13 @@ window.displayBooks = function (arrayToUse) {
                             <img src="${book.Pictures[0]}" alt="${book.Title}">
                             <div class="book-title">${book.Title}</div>
                             <div class="book-genre">${book.Genre}</div>
-                        </div>
-                    `
+                        </div>`
                 )
                 .join("")}
         </div>
     `;
 };
 
-// Function to display a single book's details
 window.viewBook = function (index) {
     const arrayToUse = currentArray || sortingArray;
     const book = arrayToUse[index];
@@ -73,34 +76,28 @@ window.viewBook = function (index) {
     `;
 };
 
-// Initialize the page functionality
 window.onload = () => {
     oldestBtn = document.getElementById("oldest");
     newestBtn = document.getElementById("newest");
-    genreDropDownItems = document.querySelectorAll(".dropcontent a");
+    genreDropDownItems = document.querySelectorAll(".dropelement");
 
-    // Event listener for sorting by oldest release date
     oldestBtn.addEventListener("click", () => {
         let sortedArray = quickSort(sortingArray);
         displayBooks(sortedArray);
     });
 
-    // Event listener for sorting by newest release date
     newestBtn.addEventListener("click", () => {
         let sortedArray = quickSort(sortingArray).reverse();
         displayBooks(sortedArray);
     });
 
-    // Event listeners for filtering by genre
-    genreDropDownItems.forEach(genreItem => {
-        genreItem.addEventListener("click", (event) => {
+    genreDropDownItems.forEach(genre => {
+        genre.addEventListener("click", (event) => {
             event.preventDefault();
-            let genre = genreItem.innerHTML.trim();
-            let filteredArray = returnGenreBooks(genre);
-            displayBooks(filteredArray);
+            let sortedArray = returnGenreBooks(genre.innerHTML);
+            displayBooks(sortedArray);
         });
     });
 
-    // Initial display of books
     displayBooks(sortingArray);
 };
