@@ -4,43 +4,72 @@
         <title>Recommender</title>
         <link rel="stylesheet" href="styles.css">
         <script type="module" src="scripts/pageSort.js"></script>
-        
+        <style>
+            #header {
+                font-size: 1.5em; /* Increase header size */
+                background-color: #d5c8aa;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            #navbar {
+                display: flex;
+                justify-content: center; /* Center buttons */
+                gap: 30px; /* Add spacing between buttons */
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .navelement {
+                color: black; /* Change text color to black */
+                text-decoration: none;
+                padding: 10px 20px;
+                font-weight: bold;
+            }
+
+            .navelement:hover {
+                background-color: lightgray;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
         <div id="header">
             <ul id="navbar">
-                <li style="padding-left: 775px;"><a class="navelement" href="index.html">Home</a></li>
+                <li><a class="navelement" href="index.html">Home</a></li>
                 <li><a class="navelement" id="active" href="recommender.html">Recommender</a></li>
                 <li><a class="navelement" href="bookmap.html">Book Map</a></li>
                 <li><a class="navelement" href="about.html">About Us</a></li>
             </ul>
         </div>
-    </head>
 
-    <body>
-        <div class="dropdown">
-            <button class="dropbtn">Genre</button>
-            <div class="dropcontent">
-                <a href="#" class="dropelement">Architecture</a>
-                <a href="#" class="dropelement">Biographical</a>
-                <a href="#" class="dropelement">Fantasy</a>
-                <a href="#" class="dropelement">Philosophy</a>
-                <a href="#" class="dropelement">Sci-Fi</a>
-                <a href="#" class="dropelement">Romance</a>
-                <a href="#" class="dropelement">Politics</a>
-                <a href="#" class="dropelement">Horror</a>
-                <a href="#" class="dropelement">Self Help</a>
-                <a href="#" class="dropelement">Dystopia</a>
-                <a href="#" class="dropelement">Crime</a>
-                <a href="#" class="dropelement">Mystery</a>
+        <main>
+            <div class="dropdown">
+                <button class="dropbtn">Genre</button>
+                <div class="dropcontent">
+                    <a href="#" class="dropelement">Architecture</a>
+                    <a href="#" class="dropelement">Biographical</a>
+                    <a href="#" class="dropelement">Fantasy</a>
+                    <a href="#" class="dropelement">Philosophy</a>
+                    <a href="#" class="dropelement">Sci-Fi</a>
+                    <a href="#" class="dropelement">Romance</a>
+                    <a href="#" class="dropelement">Politics</a>
+                    <a href="#" class="dropelement">Horror</a>
+                    <a href="#" class="dropelement">Self Help</a>
+                    <a href="#" class="dropelement">Dystopia</a>
+                    <a href="#" class="dropelement">Crime</a>
+                    <a href="#" class="dropelement">Mystery</a>
+                </div>
             </div>
-        </div>
 
-        <div class="buttons">
-            <button id="oldest">Oldest</button>
-            <button id="newest">Newest</button>
-        </div>
+            <div class="buttons">
+                <button id="oldest">Oldest</button>
+                <button id="newest">Newest</button>
+            </div>
 
-        <div id="book-display">
-
-        </div>
+            <div id="book-display"></div>
+        </main>
     </body>
 </html>
