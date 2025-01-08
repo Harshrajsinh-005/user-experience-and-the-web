@@ -6,6 +6,7 @@ let newestBtn
 let genreDropDownItems
 let currentArray
 const bookContainer = document.getElementById("book-display")
+let currentGenre
 
 function returnGenreBooks(genre) {
     let genreBookArray = []
@@ -52,15 +53,16 @@ window.displayBooks = function (arrayToUse) {
                         <div class="book-item" onclick="viewBook(${index})">
                             <img src="${book.Pictures[0]}" alt="${book.Title}">
                             <div class="book-title">${book.Title}</div>
-                            <div class="book-genre>${book.Genre}</div>
+                            <div class="book-genre">${book.Genre}</div>
                         </div>`
                 ).join("")}
         </div>
         `
+
+    registerClickEvents()
 }
 
 window.viewBook = function (index) {
-    console.log(index)
     const arrayToUse = (currentArray) ? currentArray : sortingArray
     const book = arrayToUse[index]
 
@@ -85,12 +87,12 @@ window.onload = () => {
     genreDropDownItems = document.querySelectorAll(".dropelement")
 
     oldestBtn.addEventListener("click", () => { 
-        let sortedArray = quickSort(sortingArray)
+        let sortedArray = quickSort(currentArray)
         displayBooks(sortedArray)
     })
 
     newestBtn.addEventListener("click", () => { 
-        let sortedArray = quickSort(sortingArray).reverse()
+        let sortedArray = quickSort(currentArray).reverse()
         displayBooks(sortedArray)
     })
     
