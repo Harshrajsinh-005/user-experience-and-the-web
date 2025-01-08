@@ -1,48 +1,50 @@
-import books from "./books.js";
+import books from "../data/books.js"
+let sortingArray = books
 
-let sortingArray = books;
-
-let oldestBtn;
-let newestBtn;
-let genreDropDownItems;
-let currentArray;
-const bookContainer = document.getElementById("book-display");
+let oldestBtn
+let newestBtn
+let genreDropDownItems
+let currentArray
+const bookContainer = document.getElementById("book-display")
 
 function returnGenreBooks(genre) {
-    let genreBookArray = [];
+    let genreBookArray = []
+
     sortingArray.forEach(book => {
-        if (book.Genre === genre) {
-            genreBookArray.push(book);
+        if (book.Genre == genre) {
+            genreBookArray.push(book)
         }
-    });
-    return genreBookArray;
+    })
+
+    return genreBookArray
 }
 
 const quickSort = (arr) => {
     if (arr.length <= 1) {
-        return arr;
+      return arr;
     }
-
+  
     let pivot = arr[0];
     let leftArr = [];
     let rightArr = [];
-
+  
     for (let i = 1; i < arr.length; i++) {
-        if (arr[i].ReleaseDate < pivot.ReleaseDate) {
-            leftArr.push(arr[i]);
-        } else {
-            rightArr.push(arr[i]);
-        }
+      if (arr[i].ReleaseDate < pivot.ReleaseDate) {
+        leftArr.push(arr[i]);
+      } else {
+        rightArr.push(arr[i]);
+      }
     }
-
+  
     return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
-};
+}
 
 window.displayBooks = function (arrayToUse) {
-    if (!arrayToUse) arrayToUse = sortingArray;
-    currentArray = arrayToUse;
+    if (!arrayToUse) { arrayToUse = sortingArray }
+    currentArray = arrayToUse
 
-    bookContainer.innerHTML = `
+    bookContainer.innerHTML = 
+        `
         <div class="book-list">
             ${arrayToUse
                 .map(
@@ -50,19 +52,20 @@ window.displayBooks = function (arrayToUse) {
                         <div class="book-item" onclick="viewBook(${index})">
                             <img src="${book.Pictures[0]}" alt="${book.Title}">
                             <div class="book-title">${book.Title}</div>
-                            <div class="book-genre">${book.Genre}</div>
+                            <div class="book-genre>${book.Genre}</div>
                         </div>`
-                )
-                .join("")}
+                ).join("")}
         </div>
-    `;
-};
+        `
+}
 
 window.viewBook = function (index) {
-    const arrayToUse = currentArray || sortingArray;
-    const book = arrayToUse[index];
+    console.log(index)
+    const arrayToUse = (currentArray) ? currentArray : sortingArray
+    const book = arrayToUse[index]
 
-    bookContainer.innerHTML = `
+    bookContainer.innerHTML = 
+    `
         <div class="book-detail">
             <h1>${book.Title}</h1>
             <img src="${book.Pictures[0]}" alt="${book.Title}">
@@ -73,31 +76,32 @@ window.viewBook = function (index) {
             <p><strong>Summary:</strong> ${book.Summary}</p>
             <button class="back-button" onclick="displayBooks()">Back to List</button>
         </div>
-    `;
-};
+    `
+}
 
 window.onload = () => {
-    oldestBtn = document.getElementById("oldest");
-    newestBtn = document.getElementById("newest");
-    genreDropDownItems = document.querySelectorAll(".dropelement");
+    oldestBtn = document.getElementById("oldest")
+    newestBtn = document.getElementById("newest")
+    genreDropDownItems = document.querySelectorAll(".dropelement")
 
-    oldestBtn.addEventListener("click", () => {
-        let sortedArray = quickSort(sortingArray);
-        displayBooks(sortedArray);
-    });
+    oldestBtn.addEventListener("click", () => { 
+        let sortedArray = quickSort(sortingArray)
+        displayBooks(sortedArray)
+    })
 
-    newestBtn.addEventListener("click", () => {
-        let sortedArray = quickSort(sortingArray).reverse();
-        displayBooks(sortedArray);
-    });
-
+    newestBtn.addEventListener("click", () => { 
+        let sortedArray = quickSort(sortingArray).reverse()
+        displayBooks(sortedArray)
+    })
+    
     genreDropDownItems.forEach(genre => {
-        genre.addEventListener("click", (event) => {
-            event.preventDefault();
-            let sortedArray = returnGenreBooks(genre.innerHTML);
-            displayBooks(sortedArray);
-        });
-    });
+        genre.addEventListener("click", (event) => { 
+            event.preventDefault()
 
-    displayBooks(sortingArray);
-};
+            let sortedArray = returnGenreBooks(genre.innerHTML)
+            displayBooks(sortedArray)
+        })
+    })
+
+    displayBooks(sortingArray)
+}
