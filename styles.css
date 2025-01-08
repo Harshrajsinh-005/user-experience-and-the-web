@@ -4,6 +4,7 @@ html {
     color: rgb(0, 0, 0);
 }
 
+/* Navbar Styling */
 #navbar {
     padding: 0;
     margin: 0;
@@ -47,31 +48,12 @@ li {
     color: black;
 }
 
+/* Dropdown Menu Styling */
 .dropdown {
     position: relative;
     display: inline-block;
     margin-top: 100px;
     margin-left: 100px;
-}
-
-.buttons {
-    margin-top: -50px;
-    margin-left: 275px;
-}
-
-.buttons button {
-    width: 125px;
-    height: 50px;
-    padding: 16px;
-    margin-right: 7px;
-    background-color: #04AA6D;
-    color: white;
-    font-size: 16px;
-    border: none;
-}
-
-.buttons button:hover {
-    background-color: #3e8e41;
 }
 
 .dropbtn {
@@ -113,6 +95,28 @@ li {
     background-color: #3e8e41;
 }
 
+/* Buttons Styling */
+.buttons {
+    margin-top: -50px;
+    margin-left: 275px;
+}
+
+.buttons button {
+    width: 125px;
+    height: 50px;
+    padding: 16px;
+    margin-right: 7px;
+    background-color: #04AA6D;
+    color: white;
+    font-size: 16px;
+    border: none;
+}
+
+.buttons button:hover {
+    background-color: #3e8e41;
+}
+
+/* Book Display Styles */
 .book-list {
     display: flex;
     flex-wrap: wrap;
@@ -145,6 +149,7 @@ li {
     color: #555;
 }
 
+/* Book Detail Section */
 .book-detail {
     padding: 20px;
 }
