@@ -1,4 +1,4 @@
-import books from "../data/books.js"
+import books from "./books.js"
 let sortingArray = books
 
 let oldestBtn
