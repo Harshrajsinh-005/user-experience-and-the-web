@@ -3,44 +3,17 @@
     <head>
         <title>Book Map</title>
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-        <style>
-            #header {
-                font-size: 1.5em; /* Increase header size */
-                background-color: #d5c8aa;
-                text-align: center;
-                padding: 20px 0;
-            }
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+              integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+              crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+                integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+                crossorigin=""></script>
 
-            #navbar {
-                display: flex;
-                justify-content: center; /* Center buttons */
-                gap: 30px; /* Add spacing between buttons */
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .navelement {
-                color: black; /* Change text color to black */
-                text-decoration: none;
-                padding: 10px 20px;
-                font-weight: bold;
-            }
-
-            .navelement:hover {
-                background-color: lightgray;
-                border-radius: 5px;
-            }
-
-            #map {
-                height: 750px;
-            }
-        </style>
     </head>
 
     <body>
+        <!-- Header Section -->
         <div id="header">
             <ul id="navbar">
                 <li><a class="navelement" href="index.html">Home</a></li>
@@ -50,13 +23,16 @@
             </ul>
         </div>
 
+        <!-- Main Content Section -->
         <main>
-            <h1>Book Map</h1>
-            <p>Explore books visually on our interactive map.</p>
+            <section class="map-section">
+                <h1>Book Map</h1>
+                <p>Explore books visually on our interactive map.</p>
+                <div id="map"></div>
+            </section>
         </main>
 
-        <div id="map"></div>
-
+        <!-- Book Map Script -->
         <script type="module" src="./scripts/bookMap.js"></script>
     </body>
 </html>

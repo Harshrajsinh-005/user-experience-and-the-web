@@ -4,38 +4,10 @@
         <title>Book Club</title>
         <link rel="stylesheet" href="styles.css">
         <script type="module" src="scripts/main.js"></script>
-        <style>
-            #header {
-                font-size: 1.5em; /* Increase header size */
-                background-color: #d5c8aa;
-                text-align: center;
-                padding: 20px 0;
-            }
-
-            #navbar {
-                display: flex;
-                justify-content: center; /* Center buttons */
-                gap: 30px; /* Add spacing between buttons */
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .navelement {
-                color: black; /* Change text color to black */
-                text-decoration: none;
-                padding: 10px 20px;
-                font-weight: bold;
-            }
-
-            .navelement:hover {
-                background-color: lightgray;
-                border-radius: 5px;
-            }
-        </style>
     </head>
 
     <body>
+        <!-- Navigation Bar -->
         <div id="header">
             <ul id="navbar">
                 <li><a class="navelement" id="active" href="index.html">Home</a></li>
@@ -45,10 +17,31 @@
             </ul>
         </div>
 
+        <!-- Main Content -->
         <main>
-            <section>
+            <!-- Hero Section -->
+            <section class="hero-section">
                 <h1>Welcome to the Book Club</h1>
-                <p>Discover, recommend, and enjoy books with our community.</p>
+                <p>A haven for book lovers to explore, share, and celebrate the joy of reading.</p>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <h2>Discover the Book Club</h2>
+                <div class="features">
+                    <div class="feature-item">
+                        <h3>Personalized Recommendations</h3>
+                        <p>Find books tailored to your unique tastes and interests.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Interactive Book Map</h3>
+                        <p>Explore books based on locations and settings from around the world.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Vibrant Community</h3>
+                        <p>Engage with fellow readers, share reviews, and discover hidden gems.</p>
+                    </div>
+                </div>
             </section>
         </main>
     </body>
