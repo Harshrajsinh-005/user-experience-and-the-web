@@ -11,7 +11,6 @@ html {
     text-align: center;
     padding: 20px 0;
     border-radius: 5px;
-
 }
 
 /* Responsive Design */
@@ -79,7 +78,6 @@ li {
     transform: scale(1.1);
     border-radius: 5px;
     /*index*/
-
 }
 
 #map {
@@ -87,13 +85,11 @@ li {
 }
 
 /*bookmap*/
-
 #active {
     background-color: #88bfb2;
     color: white;
     font-weight: bold;
     border-radius: 8px;
-
 }
 
 /* Dropdown Menu Styling */
@@ -201,21 +197,15 @@ li {
 }
 
 .book-item img {
-    /* max-width: 100%; */
-    /* transition: filter 0.3s ease, transform 0.3s;  */
     width: 200px;
-    /* Set a fixed width */
     height: 300px;
-    /* Set a fixed height */
     object-fit: cover;
-    /* Ensures images are scaled to fit without distorting their aspect ratio */
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
 .book-item:hover img {
-    filter: blur(4px);
-    transform: scale(1.1);
+    transform: scale(1.1); /* Zoom without blur */
 }
 
 .book-title {
@@ -230,19 +220,6 @@ li {
     color: #777;
 }
 
-/* Animations for Book Images */
-@keyframes blurZoom {
-    0% {
-        filter: blur(0px);
-        transform: scale(1);
-    }
-
-    100% {
-        filter: blur(4px);
-        transform: scale(1.1);
-    }
-}
-
 /* Book Detail Section */
 .book-detail {
     padding: 20px;
@@ -250,11 +227,8 @@ li {
 
 .book-detail img {
     width: 400px;
-    /* Set a fixed width */
     height: 500px;
-    /* Set a fixed height */
     object-fit: cover;
-    /* Ensures images are scaled to fit without distorting their aspect ratio */
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
@@ -355,8 +329,6 @@ li {
     margin-bottom: 20px;
 }
 
-
-
 #map {
     height: 600px;
     width: 100%;
@@ -370,7 +342,6 @@ li {
     /* margin-top: 70px; */
     /* Adjust if you prefer zoom buttons in the top-left */
 }
-
 
 @media (max-width: 768px) {
     .map-section {
