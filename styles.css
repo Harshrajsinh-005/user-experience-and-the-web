@@ -201,15 +201,21 @@ li {
 }
 
 .book-item img {
-    width: 200px; /* Set a fixed width */
-    height: 300px; /* Set a fixed height */
-    object-fit: cover; /* Ensures images are scaled to fit without distorting their aspect ratio */
+    /* max-width: 100%; */
+    /* transition: filter 0.3s ease, transform 0.3s;  */
+    width: 200px;
+    /* Set a fixed width */
+    height: 300px;
+    /* Set a fixed height */
+    object-fit: cover;
+    /* Ensures images are scaled to fit without distorting their aspect ratio */
     border-radius: 8px;
-    transition: transform 0.3s ease; /* Keep the transition for smooth zooming */
+    transition: transform 0.3s ease;
 }
 
 .book-item:hover img {
-    transform: scale(1.1); /* Zoom effect on hover */
+    filter: blur(4px);
+    transform: scale(1.1);
 }
 
 .book-title {
@@ -243,9 +249,12 @@ li {
 }
 
 .book-detail img {
-    width: 400px; /* Set a fixed width */
-    height: 500px; /* Set a fixed height */
-    object-fit: cover; /* Ensures images are scaled to fit without distorting their aspect ratio */
+    width: 400px;
+    /* Set a fixed width */
+    height: 500px;
+    /* Set a fixed height */
+    object-fit: cover;
+    /* Ensures images are scaled to fit without distorting their aspect ratio */
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
@@ -346,6 +355,8 @@ li {
     margin-bottom: 20px;
 }
 
+
+
 #map {
     height: 600px;
     width: 100%;
@@ -359,6 +370,7 @@ li {
     /* margin-top: 70px; */
     /* Adjust if you prefer zoom buttons in the top-left */
 }
+
 
 @media (max-width: 768px) {
     .map-section {
