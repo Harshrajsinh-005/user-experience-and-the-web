@@ -7,7 +7,6 @@ html {
 
 #header {
     font-size: 1.5em;
-    /* Increase header size */
     text-align: center;
     padding: 20px 0;
     border-radius: 5px;
@@ -40,22 +39,24 @@ html {
 #navbar {
     display: flex;
     justify-content: center;
-    /* Center buttons */
     gap: 30px;
-    /* Add spacing between buttons */
     z-index: 1000;
 
     padding: 0;
     margin: 0;
     list-style-type: none;
     background: linear-gradient(90deg, #5a8c85, #88bfb2);
-    border-radius: 12px;
     overflow: hidden;
     align-items: center;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#navbar a {
+    text-decoration: none;
 }
 
 li {
@@ -338,11 +339,6 @@ li {
     position: relative;
 }
 
-.leaflet-control-zoom {
-    /* margin-top: 70px; */
-    /* Adjust if you prefer zoom buttons in the top-left */
-}
-
 @media (max-width: 768px) {
     .map-section {
         width: 90%;
@@ -398,6 +394,10 @@ li {
     text-align: left;
 }
 
+.feature-item a {
+    color: #000000;
+}
+
 .feature-item h3 {
     font-size: 20px;
     margin-bottom: 10px;
@@ -406,6 +406,11 @@ li {
 .feature-item p {
     font-size: 16px;
     color: #555;
+}
+
+.editors-choice {
+    text-align: center;
+    padding: 40px 20px;
 }
 
 /* Call-to-Action Section */

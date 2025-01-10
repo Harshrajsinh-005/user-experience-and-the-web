@@ -3,17 +3,16 @@
     <head>
         <title>Book Club</title>
         <link rel="stylesheet" href="styles.css">
-        <script type="module" src="scripts/main.js"></script>
     </head>
 
     <body>
         <!-- Navigation Bar -->
         <div id="header">
             <ul id="navbar">
-                <li><a class="navelement" id="active" href="index.html">Home</a></li>
-                <li><a class="navelement" href="recommender.html">Recommender</a></li>
-                <li><a class="navelement" href="bookmap.html">Book Map</a></li>
-                <li><a class="navelement" href="about.html">About Us</a></li>
+                <li><a class="navelement" id="active" href="index.html" role="heading">Home</a></li>
+                <li><a class="navelement" href="recommender.html" role="heading">Recommender</a></li>
+                <li><a class="navelement" href="bookmap.html" role="heading">Book Map</a></li>
+                <li><a class="navelement" href="about.html" role="heading">About Us</a></li>
             </ul>
         </div>
 
@@ -21,26 +20,33 @@
         <main>
             <!-- Hero Section -->
             <section class="hero-section">
-                <h1>Welcome to the Book Club</h1>
+                <h1 role="heading">Welcome to the Book Club</h1>
                 <p>A haven for book lovers to explore, share, and celebrate the joy of reading.</p>
             </section>
 
                <!-- Features Section -->
             <section class="features-section">
-                <h2>Discover the Book Club</h2>
+                <h2 role="heading">Discover the Book Club</h2>
                 <div class="features">
                     <div class="feature-item">
-                        <h3><a href="recommender.html">Personalized Recommendations</a></h3>
+                        <h3><a href="recommender.html" role="link">Personalized Recommendations</a></h3>
                         <p>Find books tailored to your unique tastes and interests.</p>
                     </div>
                     <div class="feature-item">
-                        <h3><a href="bookmap.html">Interactive Book Map</a></h3>
+                        <h3><a href="bookmap.html role=" role="link">Interactive Book Map</a></h3>
                         <p>Explore books based on locations and settings from around the world.</p>
                     </div>
                     <div class="feature-item">
                         <h3>Vibrant Community</h3>
                         <p>Engage with fellow readers, share reviews, and discover hidden gems.</p>
                     </div>
+                </div>
+            </section>
+
+            <section class="editors-choice">
+                <h2 role="heading">Editors Choices</h2>
+                <div id="book-display">
+                    <script type="module" src="./scripts/editorsChoiceBooks.js"></script>
                 </div>
             </section>
         </main>

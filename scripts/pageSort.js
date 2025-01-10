@@ -9,6 +9,11 @@ const bookContainer = document.getElementById("book-display")
 let currentGenre
 
 function returnGenreBooks(genre) {
+    if (genre == "None") {
+        let genreBookArray = sortingArray
+        return genreBookArray
+    }
+
     let genreBookArray = []
 
     sortingArray.forEach(book => {
@@ -51,15 +56,13 @@ window.displayBooks = function (arrayToUse) {
                 .map(
                     (book, index) => `
                         <div class="book-item" onclick="viewBook(${index})">
-                            <img src="${book.Pictures[0]}" alt="${book.Title}">
+                            <img src="${book.Pictures[0]}" alt="${book.Title}" role="img">
                             <div class="book-title">${book.Title}</div>
                             <div class="book-genre">${book.Genre}</div>
                         </div>`
                 ).join("")}
         </div>
         `
-
-    registerClickEvents()
 }
 
 window.viewBook = function (index) {
@@ -70,7 +73,7 @@ window.viewBook = function (index) {
     `
         <div class="book-detail">
             <h1>${book.Title}</h1>
-            <img src="${book.Pictures[0]}" alt="${book.Title}">
+            <img src="${book.Pictures[0]}" alt="${book.Title}" role="img">
             <p><strong>Author:</strong> ${book.Author}</p>
             <p><strong>Genre:</strong> ${book.Genre}</p>
             <p><strong>Release Date:</strong> ${book.ReleaseDate}</p>
